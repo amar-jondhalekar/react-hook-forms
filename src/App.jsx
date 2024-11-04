@@ -35,7 +35,13 @@ function App() {
     <br/>
     <div>
       <label> Last Name: </label>
-      <input {...register('lastName')}/>
+      <input {...register('lastName', {
+        pattern: {
+          value: /^[A-Za-z]+$/i,
+          message: 'Last Name is not as per the rules'
+        }
+      })}/>
+      {errors.lastName && <p className='error-msg'>{errors.lastName.message}</p>}
     </div>
     <br/>
     <input type='submit'/>
