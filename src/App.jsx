@@ -9,7 +9,9 @@ function App() {
     formState: { errors },
   } = useForm();
 
-  function onSubmit(data){
+  async function onSubmit(data){
+    // API call simulate 
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     console.log('Submiting the form', data);
   }
 
