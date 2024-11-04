@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.input-error{
+  border: 1px solid red;
+}
+
+.error-msg{
+  color: red;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
