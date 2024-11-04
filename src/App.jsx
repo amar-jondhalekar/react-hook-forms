@@ -6,7 +6,7 @@ function App() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   async function onSubmit(data){
@@ -50,7 +50,9 @@ function App() {
       {errors.lastName && <p className='error-msg'>{errors.lastName.message}</p>}
     </div>
     <br/>
-    <input type='submit'/>
+    <input type='submit' disabled={isSubmitting}
+    value={isSubmitting ? "Submitting" : "Submit"}
+    />
     </form>
     </>
   )
