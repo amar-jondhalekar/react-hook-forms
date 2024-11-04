@@ -30,12 +30,16 @@ function App() {
     <br/>
     <div>
       <label> Middle Name: </label>
-      <input {...register('midName')}/>
+      <input
+      className={errors.midName ? 'input-error' : ""}
+      {...register('midName')}/>
     </div>
     <br/>
     <div>
       <label> Last Name: </label>
-      <input {...register('lastName', {
+      <input 
+      className={errors.lastName ? 'input-error' : ""}
+      {...register('lastName', {
         pattern: {
           value: /^[A-Za-z]+$/i,
           message: 'Last Name is not as per the rules'
